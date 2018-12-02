@@ -1,7 +1,7 @@
 # 1. Build the image locally:
-# docker build -t flutter .
+# docker build -t flutter-android .
 # 2. Build inside the image locally (e.g. test CI on local device)
-# docker run -v /home/can/hdm/morphing-interior/mi_client:/app -it flutter
+# docker run -v /home/can/hdm/morphing-interior/mi_client:/app -it flutter-android
 
 FROM  javiersantos/android-ci:28.0.2
 
