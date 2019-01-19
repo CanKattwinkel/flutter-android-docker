@@ -3,7 +3,7 @@
 # 2. Build inside the image locally (e.g. test CI on local device)
 # docker run -v /home/can/hdm/morphing-interior/mi_client:/app -it flutter-android
 
-FROM  javiersantos/android-ci:28.0.2
+FROM  javiersantos/android-ci:28.0.3
 
 MAINTAINER kattwinkel@w11k.de
 

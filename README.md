@@ -1,6 +1,6 @@
 # Flutter Android Docker (API 28)
 
-Based on [`javiersantos/android-ci:28.0.2`](https://github.com/javiersantos/android-ci/).
+Based on [`javiersantos/android-ci:28.0.3`](https://github.com/javiersantos/android-ci/).
 
 ## Building and running
 
