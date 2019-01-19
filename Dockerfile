@@ -10,16 +10,17 @@ MAINTAINER kattwinkel@w11k.de
 RUN apt-get -qq update && \
     apt-get install -qqy --no-install-recommends \
       xz-utils \
-    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+RUN yes | sdk/tools/bin/sdkmanager --licenses
 
 
-ENV FLUTTER_VERSION v0.11.13-beta
+ENV FLUTTER_VERSION v1.0.0-stable
 
 WORKDIR /
 
-RUN curl -O https://storage.googleapis.com/flutter_infra/releases/beta/linux/flutter_linux_$FLUTTER_VERSION.tar.xz
+RUN curl -O https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_$FLUTTER_VERSION.tar.xz
 RUN tar xf flutter_linux_$FLUTTER_VERSION.tar.xz
 ENV PATH $PATH:/flutter/bin/cache/dart-sdk/bin:/flutter/bin
 
+RUN yes | flutter doctor --android-licenses
 RUN flutter doctor
-
