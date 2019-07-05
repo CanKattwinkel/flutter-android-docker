@@ -8,13 +8,16 @@ FROM  javiersantos/android-ci:28.0.3
 MAINTAINER kattwinkel@w11k.de
 
 RUN apt-get -qq update && \
-    apt-get install -qqy --no-install-recommends \
-      xz-utils \
-    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+  apt-get install -qqy --no-install-recommends \
+  xz-utils \
+  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
 RUN yes | sdk/tools/bin/sdkmanager --licenses
 
+# Updating build tools to meet flutter requirements 
+RUN /sdk/tools/bin/sdkmanager "platforms;android-28" "build-tools;28.0.3"
 
-ENV FLUTTER_VERSION v1.0.0-stable
+ENV FLUTTER_VERSION v1.5.4-hotfix.2-stable
 
 WORKDIR /
 
