@@ -17,8 +17,7 @@ RUN yes | sdk/tools/bin/sdkmanager --licenses
 # Updating build tools to meet flutter requirements 
 RUN /sdk/tools/bin/sdkmanager "platforms;android-28" "build-tools;28.0.3"
 
-ENV FLUTTER_VERSION v1.5.4-hotfix.2-stable
-
+ENV FLUTTER_VERSION v1.7.8+hotfix.4-stable
 WORKDIR /
 
 RUN curl -O https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_$FLUTTER_VERSION.tar.xz && \
